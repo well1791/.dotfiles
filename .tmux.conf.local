@@ -261,6 +261,17 @@ set -g mode-keys vi
 # clear both screen and history
 unbind -n C-l
 
+# split panes using h and s
+bind s split-window -h
+bind v split-window -v
+unbind '"'
+unbind %
+
+# edit vim and zsh configuration files
+unbind e
+bind e new-window -n '~/.tmux.conf' "sh -c '\${EDITOR:-vim} -O ~/.tmux.conf.local ~/.tmux.conf && tmux source ~/.tmux.conf && tmux display \"~/.tmux.conf sourced\"'"
+bind z new-window -n '~/.zshrc' "sh -c '\${EDITOR:-vim} ~/.zshrc && source ~/.zshrc && tmux display \"~/.zshrc sourced\"'"
+
 # -- tpm  customizations -------------------------------------------------------
 # this should always be at the bottom
 
