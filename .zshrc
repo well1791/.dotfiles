@@ -22,8 +22,9 @@ alias vscode="/usr/local/bin/code"
 
 # shortcut directories
 alias sb="cd ~/code/StackBuilders"
-alias twi="cd ~/code/Twilio"
+alias deved="cd ~/code/Twilio/deved"
 alias well="cd ~/code/well1791"
+alias dotf="cd ~/.dotfiles"
 
 # Node env
 export PATH="$HOME/.yarn/bin:$PATH"

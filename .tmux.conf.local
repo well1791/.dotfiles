@@ -262,8 +262,9 @@ set -g mode-keys vi
 unbind -n C-l
 
 # split panes using h and s
-bind s split-window -h
-bind v split-window -v
+bind s split-window -h -c '#{pane_current_path}'
+bind v split-window -v -c '#{pane_current_path}'
+
 unbind '"'
 unbind %
 
