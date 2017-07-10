@@ -8,7 +8,7 @@ if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
 fi
 
 export VISUAL=vim
-export EDITOR="$VISUAL"
+export EDITOR="${VISUAL}"
 export PATH="${HOME}/.local/bin:${PATH}"
 
 #bindkey -e
@@ -18,22 +18,21 @@ eval $(/usr/libexec/path_helper -s)
 alias tmux="tmux -2"
 alias ghc="stack exec -- ghc"
 alias ghci="stack exec -- ghci"
-alias vscode="/usr/local/bin/code"
 
 # shortcut directories
-alias sb="cd ~/code/StackBuilders"
-alias deved="cd ~/code/Twilio/deved"
-alias well="cd ~/code/well1791"
-alias dotf="cd ~/.dotfiles"
+alias sb="cd ${HOME}/code/StackBuilders"
+alias deved="cd ${HOME}/code/Twilio/deved"
+alias well="cd ${HOME}/code/well1791"
+alias dotf="cd ${HOME}/.dotfiles"
 
 # Node env
-export PATH="$HOME/.yarn/bin:$PATH"
+export PATH="${HOME}/.yarn/bin:${PATH}"
 export NVM_DIR="/usr/local/opt/nvm"
-[[ -s "$NVM_DIR/nvm.sh" ]] && source "$NVM_DIR/nvm.sh"  # This loads nvm
+[[ -s "${NVM_DIR}/nvm.sh" ]] && source "${NVM_DIR}/nvm.sh"  # This loads nvm
 
 # PHP env
 export PATH="${HOME}/.composer/vendor/bin:${PATH}"
-[[ -e "${HOME}/.phpbrew/bashrc" ]] && source "${HOME}/.phpbrew/bashrc"
+[[ -s "${HOME}/.phpbrew/bashrc" ]] && source "${HOME}/.phpbrew/bashrc"
 
 # Python virtualenv
 export WORKON_HOME="${HOME}/.virtualenvs"
