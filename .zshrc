@@ -17,10 +17,12 @@ export PATH="${HOME}/.local/bin:${PATH}"
 #bindkey -e
 eval $(/usr/libexec/path_helper -s)
 
+# Pipe colors to less (mac os)
+export CLICOLOR_FORCE=1
+
 # Aliases
 alias tmux="tmux -2"
-alias ghc="stack exec -- ghc"
-alias ghci="stack exec -- ghci"
+alias less="less -R"
 
 # Shortcut directories
 alias sb="cd ${HOME}/code/StackBuilders"
@@ -28,14 +30,14 @@ alias deved="cd ${HOME}/code/Twilio/deved"
 alias well="cd ${HOME}/code/well1791"
 alias dotf="cd ${HOME}/.dotfiles"
 
+# Haskell
+alias ghc="stack exec -- ghc"
+alias ghci="stack exec -- ghci"
+
 # Node env
 export PATH="${HOME}/.yarn/bin:${PATH}"
 export NVM_DIR="/usr/local/opt/nvm"
 [[ -s "${NVM_DIR}/nvm.sh" ]] && source "${NVM_DIR}/nvm.sh"  # This loads nvm
-
-# PHP env
-export PATH="${HOME}/.composer/vendor/bin:${PATH}"
-[[ -s "${HOME}/.phpbrew/bashrc" ]] && source "${HOME}/.phpbrew/bashrc"
 
 # Python virtualenv
 export WORKON_HOME="${HOME}/.virtualenvs"
@@ -45,6 +47,10 @@ export WORKON_HOME="${HOME}/.virtualenvs"
 # Ruby env
 export PATH="${HOME}/.rbenv/bin:${PATH}"
 eval "$(rbenv init -)"
+
+# PHP env
+export PATH="${HOME}/.composer/vendor/bin:${PATH}"
+[[ -s "${HOME}/.phpbrew/bashrc" ]] && source "${HOME}/.phpbrew/bashrc"
 
 # Jvm env
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
