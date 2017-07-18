@@ -7,6 +7,9 @@ if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
   source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
 fi
 
+# Enable interative comments
+setopt interactivecomments
+
 export VISUAL=vim
 export EDITOR="${VISUAL}"
 export PATH="${HOME}/.local/bin:${PATH}"
@@ -14,12 +17,12 @@ export PATH="${HOME}/.local/bin:${PATH}"
 #bindkey -e
 eval $(/usr/libexec/path_helper -s)
 
-# aliases
+# Aliases
 alias tmux="tmux -2"
 alias ghc="stack exec -- ghc"
 alias ghci="stack exec -- ghci"
 
-# shortcut directories
+# Shortcut directories
 alias sb="cd ${HOME}/code/StackBuilders"
 alias deved="cd ${HOME}/code/Twilio/deved"
 alias well="cd ${HOME}/code/well1791"
