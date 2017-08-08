@@ -262,16 +262,16 @@ set -g mode-keys vi
 unbind -n C-l
 
 # split panes using h and s
-bind s split-window -h -c '#{pane_current_path}'
-bind v split-window -v -c '#{pane_current_path}'
+bind v split-window -h -c '#{pane_current_path}'
+bind s split-window -v -c '#{pane_current_path}'
 
 unbind '"'
 unbind %
 
 # edit vim and zsh configuration files
 unbind e
-bind e new-window -n '~/.tmux.conf' "sh -c '\${EDITOR:-vim} -O ~/.tmux.conf.local ~/.tmux.conf && tmux source ~/.tmux.conf && tmux display \"~/.tmux.conf sourced\"'"
-bind z new-window -n '~/.zshrc' "sh -c '\${EDITOR:-vim} ~/.zshrc && source ~/.zshrc && tmux display \"~/.zshrc sourced\"'"
+bind e new-window -n '~/.tmux.conf' "sh -c 'vim -O ~/.tmux.conf.local ~/.tmux.conf && tmux source ~/.tmux.conf && tmux display \"~/.tmux.conf sourced\"'"
+bind z new-window -n '~/.zshrc' "sh -c 'vim ~/.zshrc && source ~/.zshrc && tmux display \"~/.zshrc sourced\"'"
 
 # -- tpm  customizations -------------------------------------------------------
 # this should always be at the bottom
