@@ -55,6 +55,7 @@ export NVM_DIR="/usr/local/opt/nvm"
 
 
 # Python virtualenv
+source $(brew --prefix autoenv)/activate.sh
 export WORKON_HOME="${HOME}/.virtualenvs"
 #export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 #[[ -s /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
