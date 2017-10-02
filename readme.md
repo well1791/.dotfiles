@@ -5,6 +5,7 @@
 - [Eriner/zim](https://github.com/well1791/zim.git#installation)
 - [spf13/spf13-vim](https://github.com/spf13/spf13-vim/#linux-nix-mac-osx-installation)
 - [gpakosz/.tmux](https://github.com/well1791/.tmux.git#installation)
+- [BurntSushi/ripgrep](https://github.com/BurntSushi/ripgrep#installation)
 
 ## Then source this
 
