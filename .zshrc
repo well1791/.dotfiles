@@ -1,78 +1,93 @@
+
+
 #
 # User configuration sourced by interactive shells
 #
 
+# Change default zim location
+export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
+
 # Source zim
-if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
-  source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
+if [[ -s ${ZIM_HOME}/init.zsh ]]; then
+  source ${ZIM_HOME}/init.zsh
 fi
 
-export VISUAL=vim
-export EDITOR="${VISUAL}"
-export PATH="${HOME}/.local/bin:/usr/local/sbin:${PATH}"
 
-
-#bindkey -e
-eval $(/usr/libexec/path_helper -s)
-
-# MacOS X - Only
-# Pipe colors to less (mac os)
-export CLICOLOR_FORCE=1
-# install gnu cli tools
-# see: https://www.topbug.net/blog/2013/04/14/install-and-use-gnu-command-line-tools-in-mac-os-x/
-# brew install coreutils
-# allow you to use gnu cli tools as native
-# export PATH="$(brew --prefix coreutils)/libexec/gnubin:/usr/local/bin:$PATH"
-# alias sed=gsed # because option -i on mac is different
+############################
+###   HELPER FUNCTIONS   ###
+############################
 
 # Enable interative comments
 setopt interactivecomments
 
-# Aliases
-alias tmux="tmux -2"
-alias less="less -R"
-alias tedit="vim -O ${HOME}/.tmux.conf.local ${HOME}/.tmux.conf && tmux source ${HOME}/.tmux.conf && tmux display '${HOME}/.tmux.conf sourced'"
-alias zedit="vim ${HOME}/.zshrc && source ${HOME}/.zshrc"
+# Default and preferred editor
+export VISUAL=vim
+export EDITOR="${VISUAL}"
 
-# Shortcut directories
-alias sb="cd ${HOME}/code/StackBuilders"
-alias deved="cd ${HOME}/code/Twilio/deved"
-alias well="cd ${HOME}/code/well1791"
-alias dotf="cd ${HOME}/.dotfiles"
+# Source path
+function src_path () {
+  [[ -s $1 ]] && source $1
+}
 
-
-# Haskell
-alias ghc="stack exec -- ghc"
-alias ghci="stack exec -- ghci"
-# Colors
-[[ -s "${HOME}/.local/bin/ghci-color" ]] && alias ghci="stack exec -- ghci-color"
+# Export path appending PATH variable
+function export_path () {
+  [[ -d $1 ]] && export PATH="${1}:${PATH}"
+}
 
 
-# Node env
-export PATH="${HOME}/.yarn/bin:${PATH}"
+####################
+###   SETTINGS   ###
+####################
+
+# Export bin and sbin paths
+export_path "${HOME}/.local/bin"
+export_path "/usr/local/sbin"
+
+
+# Node
 export NVM_DIR="/usr/local/opt/nvm"
-[[ -s "${NVM_DIR}/nvm.sh" ]] && source "${NVM_DIR}/nvm.sh"  # This loads nvm
+src_path "${NVM_DIR}/nvm.sh"
+export_path "${HOME}/.yarn/bin"
 
 
 # Python virtualenv
-source $(brew --prefix autoenv)/activate.sh
 export WORKON_HOME="${HOME}/.virtualenvs"
-#export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
-#[[ -s /usr/local/bin/virtualenvwrapper.sh ]] && source /usr/local/bin/virtualenvwrapper.sh
-[[ -s "${HOME}/.pythonrc" ]] && source "${HOME}/.pythonrc"
+export VIRTUALENVWRAPPER_PYTHON="/usr/bin/python"
+src_path "${HOME}/.pythonrc"
+src_path "/usr/local/bin/virtualenvwrapper.sh"
 
 
 # Ruby env
-export PATH="${HOME}/.rbenv/bin:${PATH}"
-eval "$(rbenv init -)"
-
-
-# PHP env
-export PATH="${HOME}/.composer/vendor/bin:${PATH}"
-[[ -s "${HOME}/.phpbrew/bashrc" ]] && source "${HOME}/.phpbrew/bashrc"
+export_path "${HOME}/.rbenv/bin"
+type "rbenv" 1>/dev/null && eval "$(rbenv init -)"
 
 
 # Jvm env
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="${HOME}/.sdkman"
-[[ -s "${SDKMAN_DIR}/bin/sdkman-init.sh" ]] && source "${SDKMAN_DIR}/bin/sdkman-init.sh"
+src_path "${SDKMAN_DIR}/bin/sdkman-init.sh"
+
+
+# PHP env
+export_path "${HOME}/.composer/vendor/bin"
+src_path "${HOME}/.phpbrew/bashrc" # MAC
+
+
+####################
+###   ALIASES   ###
+####################
+
+# Directories
+alias dotf="cd ${HOME}/.dotfiles"
+CODE_PATH="${HOME}/Code"
+alias sb="cd ${CODE_PATH}/StackBuilders"
+alias deved="cd ${CODE_PATH}/Twilio/deved"
+alias well="cd ${CODE_PATH}/well1791"
+
+# Common
+alias less="less -R"
+alias tedit="vim -O ${HOME}/.tmux.conf.local ${HOME}/.tmux.conf && tmux source ${HOME}/.tmux.conf && tmux display '${HOME}/.tmux.conf sourced'"
+alias zedit="vim ${HOME}/.zshrc && source ${HOME}/.zshrc"
+type "tmux" 1>/dev/null && alias tmux="tmux -2"
+
+# Haskell
+type stack 1>/dev/null && alias ghci="stack exec -- ghci"
