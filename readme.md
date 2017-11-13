@@ -2,19 +2,6 @@
 
 **TODO:** Create an `install.sh` script
 
-**NOTE:** Install first [Basic shell configurations](#basic-shell-configurations)
-before running these commands
-
-Sourcing configurations
-
-```sh
-git clone https://github.com/well1791/dotfiles.git ~/.dotfiles
-ln -s ~/.dotfiles/.zshrc ~/.zshrc
-ln -s ~/.dotfiles/.zimrc ~/.zimrc
-ln -s ~/.dotfiles/.vimrc.local ~/.vimrc.local
-ln -s ~/.dotfiles/.tmux.conf.local ~/.tmux.conf.local
-```
-
 ## Basic stuffs
 - [zsh](https://github.com/well1791/zim.git#installation)
 - [tmux](https://github.com/well1791/.tmux.git#installation)
