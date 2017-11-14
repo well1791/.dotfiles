@@ -65,6 +65,7 @@ export_path "/usr/local/sbin"
 # node
 export NVM_DIR="/usr/local/opt/nvm"
 src_file "${NVM_DIR}/nvm.sh"
+src_file "${NVM_DIR}/bash_completion"
 export_path "${HOME}/.yarn/bin"
 
 
