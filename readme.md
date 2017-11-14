@@ -2,38 +2,40 @@
 
 **TODO:** Create an `install.sh` script
 
+
 ## Basic stuffs
 - [zsh](https://github.com/well1791/zim.git#installation)
 - [tmux](https://github.com/well1791/.tmux.git#installation)
 - [vim](https://github.com/spf13/spf13-vim/#linux-nix-mac-osx-installation)
 
+
 ## CLI tools by language
 
 #### Node
-- [nvm](https://github.com/creationix/nvm#install-script) **(version manager)**
+- [nvm](https://github.com/creationix/nvm#install-script)
 - [npm](https://www.npmjs.com)
 - [yarn](https://yarnpkg.com/en/docs/install#linux-tab)
 
 #### Python
 - [pip](https://pip.pypa.io/en/latest/installing)
-- [virtualenv](https://virtualenv.pypa.io/en/stable/installation/) **(version manager)**
+- [pyenv](https://github.com/pyenv/pyenv#installation)
+- [pipenv](https://docs.pipenv.org/install.html#installing-pipenv)
 
 #### Ruby
-- [rbenv](https://github.com/rbenv/rbenv#installation) **(version manager)**
+- [rbenv](https://github.com/rbenv/rbenv#installation)
 - [gem](https://rubygems.org)
 - [bundler](http://bundler.io/#getting-started)
 
 #### JVM
-- [sdk](http://sdkman.io/install.html) **(version manager)**
+- [sdk](http://sdkman.io/install.html)
 - [sbt](http://www.scala-sbt.org/1.x/docs/index.html#Install)
 - [gradle](https://gradle.org/)
-
 
 #### Haskell
 - [stack](https://docs.haskellstack.org/en/stable/README/#how-to-install)
 
 #### Rust
-- [rustup](https://www.rustup.rs/) **(version manager)**
+- [rustup](https://www.rustup.rs/)
 - [cargo](http://doc.crates.io/#installing)
 
 
