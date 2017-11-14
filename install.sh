@@ -2,25 +2,16 @@
 
 function ln_dotf() {
   f="${HOME}/${1}"
-  dotf="${HOME}/.dotfiles/${1}"
-
-  # If there is already a non-zero symbolic link
-  if [[ -L "$f" ]] && [[ -f "$f" ]]; then
-    echo "Link: $f already exists! Please check if it is linked correctly."
-    return 0
-  fi
+  [[ -z "$2" ]] && dotf="${2}/${1}" || dotf="${HOME}/.dotfiles/${1}"
 
   # If source link doesn't exist
   if [[ ! -f "$dotf" ]]; then
-    echo "File: "$dotf" doesn't exists! There is nothing to link."
+    echo "File: \"$dotf\" doesn't exists! There is nothing to link."
     return 0
   fi
 
-  # Remove file if exists and is regular
-  [[ -f "$f" ]] && rm "$f"
-
-  # Create a symbolic link between ~/.dotfiles/<file> and ~/<file>
-  ln -s "$dotf" "$f"
+  # Create (or force) a symbolic link from ~/.dotfiles/<file> to ~/<file>
+  ln -s -f "$dotf" "$f"
 }
 
 ###################
@@ -60,8 +51,11 @@ ln_dotf ".zimrc"
 # tmux
 TMUX_CONF="${HOME}/.tmux"
 
-[[ -d "$TMUX_CONF" ]] || git clone https://github.com/well1791/.tmux.git "$TMUX_CONF"
-ln -s -f "${TMUX_CONF}/.tmux.conf" "${HOME}/.tmux.conf"
+if [[ ! -d "$TMUX_CONF" ]]; then
+  git clone https://github.com/well1791/.tmux.git "$TMUX_CONF"
+fi
+
+ln_dotf ".tmux.conf" "$TMUX_CONF"
 ln_dotf ".tmux.conf.local"
 
 
