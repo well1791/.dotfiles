@@ -29,14 +29,21 @@ function ln_dotf() {
 
 
 # First steps
-cd "${HOME}"
-git clone https://github.com/well1791/dotfiles.git "${HOME}/.dotfiles"
+cd "$HOME"
+DOTF_DIR="${HOME}/.dotfiles"
+
+if [[ ! -d "$DOTF_DIR" ]]; then
+ git clone https://github.com/well1791/dotfiles.git "$DOTF_DIR"
+fi
 
 
 # zsh
-git clone --recursive https://github.com/well1791/zim.git "$ZIM_DIR"
 ZIM_DIR="${ZDOTDIR:-${HOME}}/.zim"
 ZIM_TPL="${ZIM_DIR}/templates"
+
+if [[ ! -d "$ZIM_DIR" ]]; then
+  git clone --recursive https://github.com/well1791/zim.git "$ZIM_DIR"
+fi
 
 for fz in $(ls "${ZIM_TPL}"); do
   src="${ZIM_TPL}/${fz}"
@@ -51,8 +58,9 @@ ln_dotf ".zimrc"
 
 
 # tmux
-git clone https://github.com/well1791/.tmux.git "$TMUX_CONF"
 TMUX_CONF="${HOME}/.tmux"
+
+[[ -d "$TMUX_CONF" ]] || git clone https://github.com/well1791/.tmux.git "$TMUX_CONF"
 ln -s -f "${TMUX_CONF}/.tmux.conf" "${HOME}/.tmux.conf"
 ln_dotf ".tmux.conf.local"
 
