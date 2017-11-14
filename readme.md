@@ -43,7 +43,7 @@
 
 ## Troublesome packages
 
-#### php
+#### PHP
 - [virtualbox](https://www.virtualbox.org/wiki/Downloads)
 - [vagrant](https://www.vagrantup.com/docs/installation)
 - [homestead](https://laravel.com/docs/homestead)
