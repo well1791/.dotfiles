@@ -1,5 +1,7 @@
 # https://github.com/gpakosz/.tmux
-# (‑●‑●)> released under the WTFPL v2 license, by Gregory Pakosz (@gpakosz)
+# (‑●‑●)> dual licensed under the WTFPL v2 license and the MIT license,
+#         without any warranty.
+#         Copyright 2012— Gregory Pakosz (@gpakosz).
 
 
 # -- navigation ----------------------------------------------------------------
@@ -27,7 +29,7 @@ tmux_conf_new_pane_retain_current_path=true
 # new pane tries to reconnect ssh sessions (experimental), possible values are:
 #   - true
 #   - false (default)
-tmux_conf_new_pane_reconnect_ssh=true
+tmux_conf_new_pane_reconnect_ssh=false
 
 # prompt for session name when creating a new session, possible values are:
 #   - true
@@ -54,6 +56,7 @@ tmux_conf_theme_highlight_focused_pane=false
 # focused pane colours:
 tmux_conf_theme_focused_pane_fg='default'
 tmux_conf_theme_focused_pane_bg='#0087d7'               # light blue
+
 
 # pane border style, possible values are:
 #   - thin (default)
@@ -169,13 +172,13 @@ tmux_conf_theme_status_right_bg='#080808,#d70000,#e4e4e4' # dark gray, red, whit
 tmux_conf_theme_status_right_attr='none,none,bold'
 
 # pairing indicator
-tmux_conf_theme_pairing='👓'          # U+1F453
+tmux_conf_theme_pairing='👓 '          # U+1F453
 tmux_conf_theme_pairing_fg='none'
 tmux_conf_theme_pairing_bg='none'
 tmux_conf_theme_pairing_attr='none'
 
 # prefix indicator
-tmux_conf_theme_prefix='⌨'            # U+2328
+tmux_conf_theme_prefix='⌨ '            # U+2328
 tmux_conf_theme_prefix_fg='none'
 tmux_conf_theme_prefix_bg='none'
 tmux_conf_theme_prefix_attr='none'
@@ -201,8 +204,8 @@ tmux_conf_battery_bar_length='auto'
 #   - gradient (default)
 #   - heat
 #   - 'colour_full_fg,colour_empty_fg,colour_bg'
-#tmux_conf_battery_bar_palette='gradient'
-tmux_conf_battery_bar_palette='#d70000,#e4e4e4,#000000'   # red, white, black
+tmux_conf_battery_bar_palette='gradient'
+#tmux_conf_battery_bar_palette='#d70000,#e4e4e4,#000000'   # red, white, black
 
 # battery hbar palette, possible values are:
 #   - gradient (default)
@@ -221,8 +224,9 @@ tmux_conf_battery_vbar_palette='gradient'
 # symbols used to indicate whether battery is charging or discharging
 tmux_conf_battery_status_charging='↑'       # U+2191
 tmux_conf_battery_status_discharging='↓'    # U+2193
-#tmux_conf_battery_status_charging='⚡'     # U+26A1
-#tmux_conf_battery_status_discharging='🔋'  # U+1F50B
+#tmux_conf_battery_status_charging='⚡ '    # U+26A1
+#tmux_conf_battery_status_charging='🔌 '    # U+1F50C
+#tmux_conf_battery_status_discharging='🔋 ' # U+1F50B
 
 # clock style
 tmux_conf_theme_clock_colour='#00afff'  # light blue
@@ -234,6 +238,8 @@ tmux_conf_theme_clock_style='24'
 # in copy mode, copying selection also copies to the OS clipboard
 #   - true
 #   - false (default)
+# on macOS, this requires installing reattach-to-user-namespace, see README.md
+# on Linux, this requires xsel or xclip
 tmux_conf_copy_to_os_clipboard=true
 
 
@@ -243,20 +249,23 @@ tmux_conf_copy_to_os_clipboard=true
 # increase history size
 #set -g history-limit 10000
 
+# start with mouse mode enabled
+#set -g mouse on
+
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual
 set -g status-keys vi
 set -g mode-keys vi
 
 # replace C-b by C-a instead of using both prefixes
- set -gu prefix2
- unbind C-a
- unbind C-b
- set -g prefix C-a
- bind C-a send-prefix
+set -gu prefix2
+unbind C-a
+unbind C-b
+set -g prefix C-a
+bind C-a send-prefix
 
 # move status line to top
-#set -g status-position top
+set -g status-position bot
 
 # clear both screen and history
 unbind -n C-l
@@ -267,19 +276,3 @@ bind s split-window -v -c '#{pane_current_path}'
 
 unbind '"'
 unbind %
-
-# edit vim and zsh configuration files
-unbind e
-bind e new-window -n '~/.tmux.conf' "sh -c 'vim -O ~/.tmux.conf.local ~/.tmux.conf && tmux source ~/.tmux.conf && tmux display \"~/.tmux.conf sourced\"'"
-bind z new-window -n '~/.zshrc' "sh -c 'vim ~/.zshrc && source ~/.zshrc && tmux display \"~/.zshrc sourced\"'"
-
-# -- tpm  customizations -------------------------------------------------------
-# this should always be at the bottom
-
-# List of plugins
-set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'tmux-plugins/tmux-sensible'
-set -g @plugin 'tmux-plugins/tmux-open'
-
-# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
-run '~/.tmux/plugins/tpm/tpm'
