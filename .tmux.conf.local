@@ -265,7 +265,7 @@ set -g prefix C-a
 bind C-a send-prefix
 
 # move status line to top
-set -g status-position bot
+#set -g status-position top
 
 # clear both screen and history
 unbind -n C-l
