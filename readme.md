@@ -41,6 +41,8 @@
 
 ## Common and/or utils packages
 - [rg](https://github.com/BurntSushi/ripgrep#installation)
+- [ngrok](https://ngrok.com/download)
+- [httpie](https://github.com/jakubroztocil/httpie#installation)
 
 
 ## Troublesome packages
