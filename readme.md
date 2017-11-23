@@ -12,7 +12,7 @@
 ## CLI tools by language
 
 #### Node
-- [nvm](https://github.com/creationix/nvm#install-script)
+- [n](https://github.com/tj/n#installation)
 - [npm](https://www.npmjs.com)
 - [yarn](https://yarnpkg.com/en/docs/install#linux-tab)
 
