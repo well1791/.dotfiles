@@ -5,7 +5,7 @@
 
 ## Basic stuffs
 - [zsh](https://github.com/well1791/zim.git#installation)
-- [tmux](https://github.com/well1791/.tmux.git#installation)
+- [tmux](https://github.com/gpakosz/.tmux.git#installation)
 - [vim](https://github.com/spf13/spf13-vim/#linux-nix-mac-osx-installation)
 
 
@@ -41,6 +41,7 @@
 
 ## Common and/or utils packages
 - [rg](https://github.com/BurntSushi/ripgrep#installation)
+- [fd](https://github.com/sharkdp/fd#installation)
 - [ngrok](https://ngrok.com/download)
 - [httpie](https://github.com/jakubroztocil/httpie#installation)
 
