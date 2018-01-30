@@ -42,8 +42,9 @@
 ## Common and/or utils packages
 - [rg](https://github.com/BurntSushi/ripgrep#installation)
 - [fd](https://github.com/sharkdp/fd#installation)
-- [ngrok](https://ngrok.com/download)
 - [httpie](https://github.com/jakubroztocil/httpie#installation)
+- [serveo](https://serveo.net/)
+- [ngrok](https://ngrok.com/download)
 
 
 ## Troublesome packages
