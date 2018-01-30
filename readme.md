@@ -44,6 +44,7 @@
 - [rg](https://github.com/BurntSushi/ripgrep#installation)
 - [fd](https://github.com/sharkdp/fd#installation)
 - [httpie](https://github.com/jakubroztocil/httpie#installation)
+- [htty](https://github.com/htty/htty)
 - [serveo](https://serveo.net/)
 - [ngrok](https://ngrok.com/download)
 
