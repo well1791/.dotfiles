@@ -267,9 +267,19 @@ bind C-a send-prefix
 # move status line to top
 #set -g status-position top
 
-# clear both screen and history
-unbind -n C-l
-
-# split panes using h and s
+# split panes using also h and s
 bind v split-window -h -c '#{pane_current_path}'
 bind s split-window -v -c '#{pane_current_path}'
+
+# override - clear history
+unbind -n C-l
+
+# override - unbind H and L in copy-mode
+#unbind -t vi-copy H 2> /dev/null
+#unbind -T copy-mode-vi L 2> /dev/null
+
+#bind -t vi-copy H top-line 2> /dev/null
+#bind -T copy-mode-vi H send -X top-line 2> /dev/null
+
+#bind -t vi-copy L bottom-line 2> /dev/null
+#bind -T copy-mode-vi L send -X bottom-line 2> /dev/null
