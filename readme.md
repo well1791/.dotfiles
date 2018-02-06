@@ -46,7 +46,7 @@
 - [httpie](https://github.com/jakubroztocil/httpie#installation)
 - [htty](https://github.com/htty/htty)
 - [serveo](https://serveo.net/)
-- [ngrok](https://ngrok.com/download)
+- [tmate](https://tmate.io)
 
 
 ## Troublesome packages
