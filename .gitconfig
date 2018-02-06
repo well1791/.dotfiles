@@ -1,7 +1,6 @@
 [user]
 	name = Wellington Mendoza
 	email = wellington.mendoza.contact@gmail.com
-	signingkey = 31D5454557133B71
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
@@ -28,5 +27,3 @@
 	patch = !git --no-pager diff --no-color
 [pager]
 	diff = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
-[commit]
-	gpgsign = true
