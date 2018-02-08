@@ -21,11 +21,11 @@ function src_file () {
 
 # Export a variable if the paths exists
 function export_var() {
-  var=$1
-  val=$2
-  cmd=$3
+  var="$1"
+  val="$2"
+  cmd="$3"
 
-  $cmd $val && eval 'export "${var}=${val}"'
+  "$cmd" "$val" && eval 'export "${var}=${val}"'
   return $?
 }
 
@@ -46,6 +46,7 @@ function lnsf() {
   fi
 
   ln -s -f "$dotf" "$f"
+  return $?
 }
 
 # Source all files from ~/.dotfiles/sh/*.sh
@@ -59,4 +60,13 @@ function source_files() {
   for f in "$SH_FILES"/*.sh; do
     source $f
   done
+
+  return $?
+}
+
+# Publish url. See, https://serveo.net/
+function publish() {
+  url="80:${1}"
+  ssh -R "$url" serveo.net
+  return $?
 }
