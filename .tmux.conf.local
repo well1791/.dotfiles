@@ -57,7 +57,6 @@ tmux_conf_theme_highlight_focused_pane=false
 tmux_conf_theme_focused_pane_fg='default'
 tmux_conf_theme_focused_pane_bg='#0087d7'               # light blue
 
-
 # pane border style, possible values are:
 #   - thin (default)
 #   - fat
@@ -273,3 +272,27 @@ bind s split-window -v -c '#{pane_current_path}'
 
 # override - clear history
 unbind -n C-l
+
+# copy selection - y
+run -b 'tmux bind -t vi-copy y copy-selection 2> /dev/null || true'
+run -b 'tmux bind -T copy-mode-vi y send -X copy-selection 2> /dev/null || true'
+
+# top line - H
+run -b 'tmux bind -t vi-copy H top-line 2> /dev/null || true'
+run -b 'tmux bind -T copy-mode-vi H send -X top-line 2> /dev/null || true'
+
+# bottom line - L
+run -b 'tmux bind -t vi-copy L bottom-line 2> /dev/null || true'
+run -b 'tmux bind -T copy-mode-vi L send -X bottom-line 2> /dev/null || true'
+
+# first non-whitespace char - _
+run -b 'tmux bind -t vi-copy _ back-to-indentation 2> /dev/null || true'
+run -b 'tmux bind -T copy-mode-vi _ send -X back-to-indentation 2> /dev/null || true'
+
+# quit mode - q
+run -b 'tmux bind -t vi-copy q cancel 2> /dev/null || true'
+run -b 'tmux bind -T copy-mode-vi q send -X cancel 2> /dev/null || true'
+
+# clear selection - Esc
+run -b 'tmux bind -t vi-copy Escape clear-selection 2> /dev/null || true'
+run -b 'tmux bind -T copy-mode-vi Escape send -X clear-selection 2> /dev/null || true'
