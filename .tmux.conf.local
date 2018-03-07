@@ -249,8 +249,8 @@ tmux_conf_copy_to_os_clipboard=true
 # increase history size
 #set -g history-limit 10000
 
-# start with mouse mode enabled
-set -g mouse on
+# start with mouse mode disabled 'cause I cannot copy the ssh-key when using tmate
+set -g mouse off
 
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual
@@ -273,13 +273,3 @@ bind s split-window -v -c '#{pane_current_path}'
 
 # override - clear history
 unbind -n C-l
-
-# override - unbind H and L in copy-mode
-#unbind -t vi-copy H 2> /dev/null
-#unbind -T copy-mode-vi L 2> /dev/null
-
-#bind -t vi-copy H top-line 2> /dev/null
-#bind -T copy-mode-vi H send -X top-line 2> /dev/null
-
-#bind -t vi-copy L bottom-line 2> /dev/null
-#bind -T copy-mode-vi L send -X bottom-line 2> /dev/null
