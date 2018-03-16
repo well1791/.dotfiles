@@ -8,6 +8,7 @@
 - [tmux](https://github.com/gpakosz/.tmux.git#installation)
 - [vim](https://github.com/spf13/spf13-vim/#linux-nix-mac-osx-installation)
 - [git-diff](https://github.com/so-fancy/diff-so-fancy)
+- [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
 
 
 ## CLI tools by language
