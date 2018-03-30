@@ -5,7 +5,7 @@
 
 ## Basic stuffs
 - [zsh](https://github.com/well1791/zim.git#installation)
-- [tmux](https://github.com/gpakosz/.tmux.git#installation)
+- [tmux](https://github.com/gpakosz/.tmux.git#installation), [galore](https://github.com/mhinz/vim-galore)
 - [vim](https://github.com/spf13/spf13-vim/#linux-nix-mac-osx-installation)
 - [git-diff](https://github.com/so-fancy/diff-so-fancy)
 - [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
