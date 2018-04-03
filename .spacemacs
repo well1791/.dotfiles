@@ -136,7 +136,7 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(espresso
+   dotspacemacs-themes '(spacemacs-light
                          material)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
@@ -326,7 +326,7 @@ you should place your code here."
   (set-face-attribute 'default nil :height 140)
 
   ;; padding-left -- doesn't work on boot
-  ;; (setq-default left-fringe-width 1)
+  ;; (setq-default left-fringe-width 2)
   ;; (setq-default left-margin-width 2)
 
   ;; run: SPC SPC customize-set-variable
