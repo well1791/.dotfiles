@@ -53,7 +53,10 @@ values."
      ;;        shell-default-position 'bottom)
      ;; spell-checking
      syntax-checking
-     version-control
+     (version-control :variables
+                      version-control-global-margin t
+                      version-control-diff-tool 'git-gutter+
+                      version-control-diff-side 'left)
      osx
      )
    ;; List of additional packages that will be installed without being
@@ -65,7 +68,8 @@ values."
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
    dotspacemacs-excluded-packages '(smartparens
-                                    yasnippet)
+                                    yasnippet
+                                    vi-tilde-fringe)
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and uninstall any
@@ -279,7 +283,7 @@ values."
    ;; Select a scope to highlight delimiters. Possible values are `any',
    ;; `current', `all' or `nil'. Default is `all' (highlight any scope and
    ;; emphasis the current one). (default 'all)
-   dotspacemacs-highlight-delimiters 'all
+   dotspacemacs-highlight-delimiters 'current
    ;; If non nil, advise quit functions to keep server open when quitting.
    ;; (default nil)
    dotspacemacs-persistent-server nil
@@ -318,12 +322,12 @@ you should place your code here."
   ;; line height
   (setq-default line-spacing 7)
 
-  ;; font-size -- doesn't work from boot
-  (set-face-attribute 'default nil :height 105)
+  ;; font-size -- doesn't work on boot
+  (set-face-attribute 'default nil :height 140)
 
-  ;; padding-left
-  (setq-default left-fringe-width 0 right-fringe-width 0)
-  (setq-default left-margin-width 2)
+  ;; padding-left -- doesn't work on boot
+  ;; (setq-default left-fringe-width 1)
+  ;; (setq-default left-margin-width 2)
 
   ;; run: SPC SPC customize-set-variable
   ;; search: counsel-grep-base-command
