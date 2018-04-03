@@ -318,7 +318,11 @@ you should place your code here."
   (setq-default line-spacing 7)
 
   ;; font-size -- doesn't work from boot
-  (set-face-attribute 'default nil :height 110)
+  (set-face-attribute 'default nil :height 105)
+
+  ;; padding-left
+  (setq-default left-fringe-width 0 right-fringe-width 0)
+  (setq-default left-margin-width 2)
 
   ;; run: SPC SPC customize-set-variable
   ;; search: counsel-grep-base-command
