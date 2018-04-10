@@ -7,6 +7,18 @@
 - [zsh](https://github.com/well1791/zim.git#installation)
 - [tmux](https://github.com/gpakosz/.tmux.git#installation)
 - [vim](https://github.com/LER0ever/EverVim#installation)
+
+## Common and/or utils packages
+- [rg](https://github.com/BurntSushi/ripgrep#installation) (instead of ag/grep/etc...)
+- [fd](https://github.com/sharkdp/fd#installation) (instead of find)
+- [httpie](https://github.com/jakubroztocil/httpie#installation)
+- [htty](https://github.com/htty/htty)
+- [serveo](https://serveo.net/) (instead of ngrok)
+- [tmate](https://tmate.io)
+- [irssi](https://irssi.org/)
+- [xmonad](http://xmonad.org/download.html) (tiling window manager)
+- [ranger](https://github.com/ranger/ranger#installing) (comes with rifle
+- [tilix](https://gnunn1.github.io/tilix-web/) (terminal emulator)
 - [git-diff](https://github.com/so-fancy/diff-so-fancy)
 - [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
 - [colors](https://github.com/mbadolato/iTerm2-Color-Schemes)
@@ -46,22 +58,7 @@
 - [rustup](https://www.rustup.rs/)
 - [cargo](http://doc.crates.io/#installing)
 
-
-## Common and/or utils packages
-- [rg](https://github.com/BurntSushi/ripgrep#installation)
-- [fd](https://github.com/sharkdp/fd#installation)
-- [httpie](https://github.com/jakubroztocil/httpie#installation)
-- [htty](https://github.com/htty/htty)
-- [serveo](https://serveo.net/)
-- [tmate](https://tmate.io)
-- [irssi](https://irssi.org/)
-- [xmonad](http://xmonad.org/download.html) (tiling window manager)
-- [ranger](https://github.com/ranger/ranger#installing) (comes with rifle
-- [tilix](https://gnunn1.github.io/tilix-web/) (terminal emulator)
-
-## Troublesome packages
-
-#### PHP
+#### PHP (sigh...)
 - [virtualbox](https://www.virtualbox.org/wiki/Downloads)
 - [vagrant](https://www.vagrantup.com/docs/installation)
 - [homestead](https://laravel.com/docs/homestead)
