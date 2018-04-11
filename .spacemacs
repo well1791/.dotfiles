@@ -35,8 +35,7 @@ values."
      auto-completion
      javascript
      html
-     (haskell :variables haskell-enable-hindent-style "gibiansky"
-                         haskell-completion-backend 'intero)
+     (haskell :variables haskell-enable-hindent-style "gibiansky")
      markdown
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -55,7 +54,7 @@ values."
      syntax-checking
      (version-control :variables
                       version-control-global-margin t
-                      version-control-diff-tool 'git-gutter+
+                      version-control-diff-tool 'git-gutter
                       version-control-diff-side 'left)
      osx
      )
@@ -143,10 +142,10 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Fira Code"
-                               :size 17
+                               :size 14
                                :weight normal
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1.5)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The key used for Emacs commands (M-x) (after pressing on the leader key).
@@ -297,15 +296,48 @@ you should place your code here."
   ;; line height
   (setq-default line-spacing 7)
 
-  ;; font-size -- doesn't work on boot
-  (set-face-attribute 'default nil :height 140)
+  ;; | BEGIN | Use correctly fira code with ligatures
+  (defun my-correct-symbol-bounds (pretty-alist)
+    "Prepend a TAB character to each symbol in this alist,
+this way compose-region called by prettify-symbols-mode
+will use the correct width of the symbols
+instead of the width measured by char-width."
+    (mapcar (lambda (el)
+              (setcdr el (string ?\t (cdr el)))
+              el)
+            pretty-alist))
 
-  ;; padding-left -- doesn't work on boot
-  ;; (setq-default left-fringe-width 2)
-  ;; (setq-default left-margin-width 2)
+  (defun my-ligature-list (ligatures codepoint-start)
+    "Create an alist of strings to replace with
+codepoints starting from codepoint-start."
+    (let ((codepoints (-iterate '1+ codepoint-start (length ligatures))))
+      (-zip-pair ligatures codepoints)))
 
-  ;; auto-save (this is done every 300 chars || every 30 seconds
-  (dotspacemacs-auto-save-file-location 'original)
+  (setq my-fira-code-ligatures
+        (let* ((ligs '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\"
+                       "{-" "[]" "::" ":::" ":=" "!!" "!=" "!==" "-}"
+                       "--" "---" "-->" "->" "->>" "-<" "-<<" "-~"
+                       "#{" "#[" "##" "###" "####" "#(" "#?" "#_" "#_("
+                       ".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*"
+                       "/**" "/=" "/==" "/>" "//" "///" "&&" "||" "||="
+                       "|=" "|>" "^=" "$>" "++" "+++" "+>" "=:=" "=="
+                       "===" "==>" "=>" "=>>" "<=" "=<<" "=/=" ">-" ">="
+                       ">=>" ">>" ">>-" ">>=" ">>>" "<*" "<*>" "<|" "<|>"
+                       "<$" "<$>" "<!--" "<-" "<--" "<->" "<+" "<+>" "<="
+                       "<==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<" "<~"
+                       "<~~" "</" "</>" "~@" "~-" "~=" "~>" "~~" "~~>" "%%"
+                       "x" ":" "+" "+" "*")))
+          (my-correct-symbol-bounds (my-ligature-list ligs #Xe100))))
+
+  ;; nice glyphs for haskell with hasklig
+  (defun my-set-hasklig-ligatures ()
+    "Add hasklig ligatures for use with prettify-symbols-mode."
+    (setq prettify-symbols-alist
+          (append my-hasklig-ligatures prettify-symbols-alist))
+    (prettify-symbols-mode))
+
+  (add-hook 'haskell-mode-hook 'my-set-hasklig-ligatures)
+  ;; | END | Use correctly fira code with ligatures
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -350,4 +382,4 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:background nil)))))
+  )
