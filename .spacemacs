@@ -319,6 +319,13 @@ explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
   ;; line height
   (setq-default line-spacing 7)
+
+  ;; automatically save buffers associated with files on buffer switch
+  ;; see: https://github.com/syl20bnr/spacemacs/issues/2376#issuecomment-169973895
+  (defadvice switch-to-buffer (before save-buffer-now activate)
+    (when buffer-file-name (save-buffer)))
+  (defadvice other-window (before other-window-now activate)
+    (when buffer-file-name (save-buffer)))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
