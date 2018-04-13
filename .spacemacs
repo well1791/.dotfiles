@@ -31,7 +31,8 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     (haskell :variables haskell-enable-hindent-style "johan-tibell")
+     (haskell :variables haskell-enable-hindent-style "johan-tibell"
+                         haskell-process-type 'stack-ghci)
      javascript
      html
      ;; ----------------------------------------------------------------
