@@ -329,6 +329,12 @@ you should place your code here."
     (when buffer-file-name (save-buffer)))
   (defadvice other-window (before other-window-now activate)
     (when buffer-file-name (save-buffer)))
+
+  ;; stack bin
+  (setq-default flycheck-haskell-stack-ghc-executable "~/.dotfiles/bin/stack-emacs")
+
+  ;; flycheck conf
+  (setq-default flycheck-hlintrc "~/.stack/global-project/.hlint.yaml")
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
