@@ -33,7 +33,8 @@ values."
    '(
      emacs-lisp
      (haskell :variables haskell-enable-hindent-style "johan-tibell"
-                         haskell-process-type 'stack-ghci)
+                         haskell-process-type 'stack-ghci
+                         haskell-completion-backend 'intero)
      python
      rust
      javascript
