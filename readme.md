@@ -1,8 +1,5 @@
 # My dotfiles
 
-**TODO:** Create an `install.sh` script
-
-
 ## Basic stuffs
 - [zsh](https://github.com/well1791/zim.git#installation)
 - [tmux](https://github.com/gpakosz/.tmux.git#installation)
@@ -28,6 +25,12 @@
 - [powerlevel9k](https://github.com/bhilburn/powerlevel9k#installation)
 - [pure](https://github.com/sindresorhus/pure#install)
 - [spaceship-prompt](https://github.com/denysdovhan/spaceship-prompt#installing)
+
+
+## Mac Tools
+- [Skitch](https://evernote.com/products/skitch)
+- [RecordIt](http://recordit.co/)
+- [VimR](https://github.com/qvacua/vimr)
 
 
 ## CLI tools by language
