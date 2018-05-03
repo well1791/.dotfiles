@@ -21,7 +21,7 @@
 - [tilix](https://gnunn1.github.io/tilix-web/) (terminal emulator)
 - [git-diff](https://github.com/so-fancy/diff-so-fancy)
 - [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
-- [colors](https://github.com/mbadolato/iTerm2-Color-Schemes)
+- [colors](https://github.com/mbadolato/iTerm2-Color-Schemes) - [BlulocoLight](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/schemes/BlulocoLight.itermcolors)
 
 
 ## Zsh Themes
