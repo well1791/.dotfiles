@@ -36,7 +36,7 @@
 ## CLI tools by language
 
 #### Node
-- [nvim](https://github.com/creationix/nvm#install-script) (already includes npm)
+- [nvm](https://github.com/creationix/nvm#install-script) (already includes npm)
 - [yarn](https://yarnpkg.com/en/docs/install#linux-tab)
 
 #### Python
