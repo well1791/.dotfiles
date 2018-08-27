@@ -1,36 +1,60 @@
 # My dotfiles
 
-## Basic stuffs
-- [zsh](https://github.com/well1791/zim.git#installation)
-- [tmux](https://github.com/gpakosz/.tmux.git#installation)
+### First thing first!
 - [vim](https://github.com/LER0ever/EverVim#installation)
-
-## Common and/or utils packages
-- [rg](https://github.com/BurntSushi/ripgrep#installation) (instead of ag/grep/etc...)
-- [fd](https://github.com/sharkdp/fd#installation) (instead of find)
-- [httpie](https://github.com/jakubroztocil/httpie#installation)
-- [htty](https://github.com/htty/htty)
-- [serveo](https://serveo.net/) (instead of ngrok)
-- [tmate](https://tmate.io)
-- [irssi](https://irssi.org/)
-- [xmonad](http://xmonad.org/download.html) (tiling window manager)
-- [ranger](https://github.com/ranger/ranger#installing) (comes with rifle
-- [tilix](https://gnunn1.github.io/tilix-web/) (terminal emulator)
-- [git-diff](https://github.com/so-fancy/diff-so-fancy)
+- [zsh](https://github.com/well1791/zim.git#installation)
 - [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
-- [colors](https://github.com/mbadolato/iTerm2-Color-Schemes) - [BlulocoLight](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/schemes/BlulocoLight.itermcolors)
 
 
-## Zsh Themes
+### Common CLI tools
+- [rg](https://github.com/BurntSushi/ripgrep#installation) (instead of `ag`/`grep`/etc...)
+- [exa](https://github.com/ogham/exa#installation) (instead of `ls`)
+- [bat](https://github.com/sharkdp/bat) (instead of `cat`)
+- [fd](https://github.com/sharkdp/fd#installation) (instead of `find`)
+- [lf](https://github.com/gokcehan/lf#installation) (file manager)
+- [fzf](https://github.com/junegunn/fzf#installation) (fuzzy file finder)
+- [tldr](https://tldr.sh/#installation) (instead of `man`)
+- [fasd](https://github.com/clvv/fasd#install) (all in one; `autojump`, `z`, `v`)
+
+
+### Http utils
+- [httpie](https://github.com/jakubroztocil/httpie#installation) (instead of `curl`)
+- [http-prompt](http://http-prompt.com/#install)
+- [serveo](https://serveo.net/) (instead of `ngrok`)
+- [localtunnel](https://github.com/localtunnel/localtunnel#installation) (instead of `ngrok`)
+- [jq](https://stedolan.github.io/jq/download/) (json CLI processor)
+- [json-server](https://github.com/typicode/json-server#getting-started) (fake REST API)
+- [insomnia](https://github.com/getinsomnia/insomnia#download) (*gui* - Http and GraphQL client)
+
+
+### Tmux utils
+- [tmux](https://github.com/gpakosz/.tmux.git#installation)
+- [tmuxp](https://github.com/tmux-python/tmuxp#installation) (tmux session manager)
+- [wemux](https://github.com/zolrath/wemux#how-to-install)
+- [tmate](https://tmate.io)
+
+
+### Git utils
+- [lazygit](https://github.com/jesseduffield/lazygit#installation) (CLI git prompt)
+- [tig](https://github.com/jonas/tig#installation-and-news)
+- [git-diff](https://github.com/so-fancy/diff-so-fancy)
+
+
+### Misc.
+- [xmonad](http://xmonad.org/download.html) (tiling window manager)
+- [weechat](https://weechat.org/download/) (irc client)
+
+
+### Zsh Themes
 - [powerlevel9k](https://github.com/bhilburn/powerlevel9k#installation)
 - [pure](https://github.com/sindresorhus/pure#install)
 - [spaceship-prompt](https://github.com/denysdovhan/spaceship-prompt#installing)
+- [colors](https://github.com/mbadolato/iTerm2-Color-Schemes) - [BlulocoLight](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/schemes/BlulocoLight.itermcolors)
 
 
 ## Mac Tools
 - [Skitch](https://evernote.com/products/skitch)
 - [RecordIt](http://recordit.co/)
-- [VimR](https://github.com/qvacua/vimr)
 
 
 ## CLI tools by language
