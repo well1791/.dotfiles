@@ -1,6 +1,3 @@
-" theme
-colorscheme ir_black
-
 " move to beginning/end of line
 nnoremap B ^
 nnoremap E $

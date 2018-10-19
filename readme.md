@@ -1,7 +1,7 @@
 # My dotfiles
 
 ### First thing first!
-- [vim](https://github.com/LER0ever/EverVim#installation)
+- [vim](https://spacevim.org/quick-start-guide/#install)
 - [zsh](https://github.com/well1791/zim.git#installation)
 - [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
 
