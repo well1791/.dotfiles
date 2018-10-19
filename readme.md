@@ -66,7 +66,7 @@
 #### Python
 - [pip](https://pip.pypa.io/en/latest/installing)
 - [pyenv](https://github.com/pyenv/pyenv#installation)
-- [pipenv](https://docs.pipenv.org/install.html#installing-pipenv)
+- [pipenv](https://github.com/pypa/pipenv#installation)
 
 #### Ruby
 - [rbenv](https://github.com/rbenv/rbenv#installation)

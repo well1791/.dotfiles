@@ -19,7 +19,7 @@ function src_file () {
   return $?
 }
 
-# Export a variable if the paths exists
+# Export a variable if path exist
 function export_var() {
   var="$1"
   val="$2"
