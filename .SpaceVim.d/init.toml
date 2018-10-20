@@ -26,6 +26,9 @@
     enable_tabline_filetype_icon = true
     enable_statusline_display_mode = false
 
+    bootstrap_after = "myspacevim#after"
+
+
 # Enable autocomplete layer
 [[layers]]
 name = 'autocomplete'
