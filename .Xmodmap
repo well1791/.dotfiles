@@ -1,4 +1,5 @@
+!
+! Set Caps_Lock to no symbol 
+!
 remove Lock = Caps_Lock
-add Lock = Escape
-keysym Caps_Lock = Escape
-keysym Escape = Caps_Lock
+keysym Caps_Lock = 0x0000
