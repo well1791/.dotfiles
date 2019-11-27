@@ -60,7 +60,7 @@
 ## CLI tools by language
 
 #### Node
-- [nvm](https://github.com/creationix/nvm#install-script) (already includes npm)
+- [volta](https://docs.volta.sh/guide/getting-started)
 - [yarn](https://yarnpkg.com/en/docs/install#linux-tab)
 
 #### Python
