@@ -2,7 +2,7 @@
 
 ### First thing first!
 - [vim](https://spacevim.org/quick-start-guide/#install)
-- [zsh](https://github.com/well1791/zim.git#installation)
+- [zsh](https://github.com/zimfw/zimfw#installation)
 - [nerd-fonts](https://github.com/ryanoasis/nerd-fonts)
 
 
@@ -10,11 +10,11 @@
 - [rg](https://github.com/BurntSushi/ripgrep#installation) (instead of `ag`/`grep`/etc...)
 - [exa](https://github.com/ogham/exa#installation) (instead of `ls`)
 - [bat](https://github.com/sharkdp/bat) (instead of `cat`)
+- [aria2](https://aria2.github.io/)
+- [fasd](https://github.com/clvv/fasd#install) (all in one; `autojump`, `z`, `v`)
 - [fd](https://github.com/sharkdp/fd#installation) (instead of `find`)
 - [lf](https://github.com/gokcehan/lf#installation) (file manager)
 - [fzf](https://github.com/junegunn/fzf#installation) (fuzzy file finder)
-- [tldr](https://tldr.sh/#installation) (instead of `man`)
-- [fasd](https://github.com/clvv/fasd#install) (all in one; `autojump`, `z`, `v`)
 
 
 ### Http utils
@@ -64,14 +64,11 @@
 - [yarn](https://yarnpkg.com/en/docs/install#linux-tab)
 
 #### Python
-- [pip](https://pip.pypa.io/en/latest/installing)
 - [pyenv](https://github.com/pyenv/pyenv#installation)
 - [pipenv](https://github.com/pypa/pipenv#installation)
 
 #### Ruby
 - [rbenv](https://github.com/rbenv/rbenv#installation)
-- [gem](https://rubygems.org)
-- [bundler](http://bundler.io/#getting-started)
 
 #### JVM
 - [sdk](http://sdkman.io/install.html)
