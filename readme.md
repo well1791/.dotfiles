@@ -43,6 +43,7 @@
 ### Misc.
 - [xmonad](http://xmonad.org/download.html) (tiling window manager)
 - [weechat](https://weechat.org/download/) (irc client)
+- [alt+tab](https://alt-tab-macos.netlify.app/#installation) (app switcher)
 
 
 ### Zsh Themes
