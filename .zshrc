@@ -123,11 +123,9 @@ bindkey -M vicmd 'j' history-substring-search-down
 # }}} End configuration added by Zim install
 
 
-DOTF="${HOME}/.dotfiles"
-FUNCS="${DOTF}/functions.sh"
+# --------------------------------
+# Initialize custom configurations
+# --------------------------------
 
-if [[ -d "$DOTF" ]] && [[ -f "$FUNCS" ]];  then
-  export DOTF
-  source "$FUNCS"
-  source_files
-fi
+INIT_DOTF="${HOME}/.dotfiles/init.sh"
+[[ -f "$INIT_DOTF" ]] && source "$INIT_DOTF"

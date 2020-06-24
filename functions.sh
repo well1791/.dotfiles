@@ -1,5 +1,5 @@
 function is_file() {
-  [[ -s "$1" ]]
+  [[ -f "$1" ]]
   return $?
 }
 
@@ -9,17 +9,17 @@ function is_dir() {
 }
 
 function is_cmd() {
-  type "$1" > /dev/null
+  command -v "$1" > /dev/null 2>&1
   return $?
 }
 
-# Source path if exists
+# Source file if exists
 function src_file () {
   is_file "$1" && source "$1"
   return $?
 }
 
-# Export a variable if path exist
+# Export a variable if cmd is true
 function export_var() {
   var="$1"
   val="$2"
@@ -40,20 +40,18 @@ function lnsf() {
   src="$1"
   dst="$2"
 
-  if ! is_file "$src"; then
-    echo "Error: File \"$src\" doesn't exists! There is nothing to link."
+  if ! is_file "$src" || ! is_dir "$src"; then
+    echo "Error: \"$src\" doesn't exists! There is nothing to link."
     return 0
   fi
 
-  ln -s -f "$dotf" "$f"
+  ln -s -f "$src" "$dst"
   return $?
 }
 
 # Source all files from ~/.dotfiles/sh/*.sh
 function source_files() {
   SH_FILES="${DOTF}/sh"
-
-  src_file "${HOME}/.aliases"
 
   ! is_dir "$SH_FILES" && return 0
 
@@ -64,8 +62,8 @@ function source_files() {
   return $?
 }
 
-# Publish url. See, https://serveo.net/
-function publish() {
+# See, https://serveo.net/
+function serveo() {
   url="80:${1}"
   ssh -R "$url" serveo.net
   return $?
