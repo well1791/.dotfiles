@@ -15,6 +15,7 @@
 - [fd](https://github.com/sharkdp/fd#installation) (instead of `find`)
 - [lf](https://github.com/gokcehan/lf#installation) (file manager)
 - [fzf](https://github.com/junegunn/fzf#installation) (fuzzy file finder)
+- [git-hooks](https://medium.com/better-programming/how-to-automatically-add-the-ticket-number-in-git-commit-message-bda5426ded05) (default ticket name)
 
 
 ### Http utils
