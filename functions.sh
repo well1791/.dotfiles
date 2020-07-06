@@ -64,7 +64,8 @@ function source_files() {
 
 # See, https://serveo.net/
 function serveo() {
-  url="80:${1}"
+  url="80:${2-localhost}:${2-3000}"
+  echo "$url"
   ssh -R "$url" serveo.net
   return $?
 }
