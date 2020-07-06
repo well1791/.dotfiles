@@ -12,7 +12,7 @@
     # if you want to use more colorscheme, please load the colorscheme
     # layer
     colorscheme = "material"
-    background = "dark"
+    colorscheme_bg = "dark"
 
     # Disable guicolors in basic mode, many terminal do not support 24bit
     # true colors
@@ -24,21 +24,21 @@
     statusline_inactive_separator = "arrow"
     buffer_index_type = 4
     enable_tabline_filetype_icon = true
-    enable_statusline_display_mode = false
+    enable_statusline_mode = false
 
     bootstrap_after = "myspacevim#after"
 
 
 # Enable autocomplete layer
 [[layers]]
-name = 'autocomplete'
-auto-completion-return-key-behavior = "complete"
-auto-completion-tab-key-behavior = "smart"
+  name = "autocomplete"
+  auto-completion-return-key-behavior = "complete"
+  auto-completion-tab-key-behavior = "smart"
 
 [[layers]]
-name = 'shell'
-default_position = 'top'
-default_height = 30
+  name = "shell"
+  default_position = "top"
+  default_height = 30
 
 [[layers]]
   name = "colorscheme"
@@ -57,6 +57,9 @@ default_height = 30
 
 [[layers]]
   name = "lang#javascript"
+
+[[layers]]
+  name = "lang#typescript"
 
 [[layers]]
   name = "lang#python"
