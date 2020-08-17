@@ -1,3 +1,2 @@
-! is_cmd "fasd" && return 0
+src_file "$(brew --prefix asdf)/asdf.sh"
 
-eval "$(fasd --init auto)"

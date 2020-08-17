@@ -12,6 +12,7 @@
 - [bat](https://github.com/sharkdp/bat) (instead of `cat`)
 - [aria2](https://aria2.github.io/)
 - [fasd](https://github.com/clvv/fasd#install) (all in one; `autojump`, `z`, `v`)
+- [asdf](https://asdf-vm.com/#/core-manage-asdf-vm) (lang virtual manager)
 - [fd](https://github.com/sharkdp/fd#installation) (instead of `find`)
 - [lf](https://github.com/gokcehan/lf#installation) (file manager)
 - [fzf](https://github.com/junegunn/fzf#installation) (fuzzy file finder)
@@ -62,7 +63,6 @@
 ## CLI tools by language
 
 #### Node
-- [volta](https://docs.volta.sh/guide/getting-started)
 - [yarn](https://yarnpkg.com/en/docs/install#linux-tab)
 
 #### Python
