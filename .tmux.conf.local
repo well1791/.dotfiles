@@ -329,3 +329,13 @@ run -b 'tmux bind -T copy-mode-vi q send -X cancel 2> /dev/null || true'
 # clear selection - Esc
 run -b 'tmux bind -t vi-copy Escape clear-selection 2> /dev/null || true'
 run -b 'tmux bind -T copy-mode-vi Escape send -X clear-selection 2> /dev/null || true'
+
+######### TPM
+
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'jbnicolai/tmux-fpp'
+set -g @plugin 'tmux-plugins/tmux-urlview'
+
+# Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
+run '~/.tmux/plugins/tpm/tpm'

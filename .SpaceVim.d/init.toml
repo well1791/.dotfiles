@@ -26,7 +26,9 @@
     enable_tabline_filetype_icon = true
     enable_statusline_mode = false
 
+    bootstrap_before = "myspacevim#before"
     bootstrap_after = "myspacevim#after"
+
 
 
 # Enable autocomplete layer
@@ -66,3 +68,7 @@
 
 [[layers]]
   name = "lang#ruby"
+
+[options]
+  enable_language_specific_leader = false
+
