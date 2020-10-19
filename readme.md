@@ -39,7 +39,7 @@
 ### Git utils
 - [lazygit](https://github.com/jesseduffield/lazygit#installation) (CLI git prompt)
 - [tig](https://github.com/jonas/tig#installation-and-news)
-- [git-diff](https://github.com/so-fancy/diff-so-fancy)
+- [git-delta](https://github.com/dandavison/delta#installation) (diffs looking good :ok_hand:)
 
 
 ### Misc.
