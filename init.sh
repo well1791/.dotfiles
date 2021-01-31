@@ -19,9 +19,8 @@ fi
 if is_cmd tmux && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
   default_session="w"
   if tl | rg -e "^${default_session}:" > /dev/null; then
-    tmux
+    tmux attach-session -t w
   else
     tmux new-session -s "$default_session"
   fi
 fi
-
