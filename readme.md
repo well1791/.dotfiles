@@ -1,6 +1,7 @@
 # My dotfiles
 
 ### First thing first!
+- [chezmoi](https://www.chezmoi.io/install/#one-line-package-install)
 - [spacevim - vim](https://spacevim.org/quick-start-guide/#install)
 - [zimfw - zsh](https://github.com/zimfw/zimfw#installation)
 - [gpakosz - tmux](https://github.com/gpakosz/.tmux.git#installation)
