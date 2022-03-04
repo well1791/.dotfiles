@@ -1,0 +1,39 @@
+[user]
+  name = Wellington Mendoza
+  email = wellsaint91@gmail.com
+
+[filter "lfs"]
+  clean = git-lfs clean %f
+  smudge = git-lfs smudge %f
+  required = true
+
+[color]
+  ui = true
+
+[diff]
+  identHeuristic = on
+  colorMoved = default
+  ;; Delta has to look at the raw colors it receives in a line from Git
+  ;; if it causes problems, the behavior can be disabled using
+  ; inspect-raw-lines = false
+
+; DELTA CONFIGS
+[core]
+  pager = delta
+
+[interactive]
+  diffFilter = delta --color-only --features=interactive
+
+[delta]
+  features = decorations
+  whitespace-error-style = 22 reverse
+
+[delta "interactive"]
+  keep-plus-minus-markers = false
+
+[delta "decorations"]
+  commit-decoration-style = bold yellow box ul
+  file-style = bold crimson
+  file-decoration-style = bold crimson box
+[init]
+	defaultBranch = main
