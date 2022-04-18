@@ -8,6 +8,8 @@ export_path "/usr/local/sbin"
 alias dotf="cd ${DOTF}"
 unalias gs
 
+is_cmd batcat && alias cat=batcat
+
 # Git log one-line - from branch up to HEAD
 function glof() {
   branch="${1-origin/master}"
@@ -16,4 +18,3 @@ function glof() {
 
   return $?
 }
-
