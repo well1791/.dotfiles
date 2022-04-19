@@ -8,7 +8,10 @@ export_path "/usr/local/sbin"
 alias dotf="cd ${DOTF}"
 unalias gs
 
-is_cmd batcat && alias cat=batcat
+if is_cmd batcat; then
+  alias bat=batcat
+  alias cat=batcat
+fi
 
 # Git log one-line - from branch up to HEAD
 function glof() {
