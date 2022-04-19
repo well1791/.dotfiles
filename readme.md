@@ -76,8 +76,9 @@
 - [fnm](https://github.com/Schniz/fnm#installation)
 
 #### Python
-- [pyenv](https://github.com/pyenv/pyenv#installation)
-- [pipenv](https://github.com/pypa/pipenv#installation)
+- [pipx](https://pypa.github.io/pipx/installation/)
+- [poetry](https://python-poetry.org/docs/#osx--linux--bashonwindows-install-instructions)
+- [virtualenv](https://virtualenv.pypa.io/en/latest/installation.html#via-pipx)
 
 #### Ruby
 - [rbenv](https://github.com/rbenv/rbenv#installation)
