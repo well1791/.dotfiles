@@ -38,5 +38,13 @@
   commit-decoration-style = bold yellow box ul
   file-style = bold crimson
   file-decoration-style = bold crimson box
+
 [init]
-	defaultBranch = main
+  defaultBranch = main
+
+[credential "https://github.com"]
+  helper = 
+  helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+  helper = 
+  helper = !/usr/bin/gh auth git-credential
