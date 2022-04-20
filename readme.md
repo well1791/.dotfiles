@@ -52,9 +52,28 @@
 
 
 ### Misc.
-- [xmonad](http://xmonad.org/download.html) (tiling window manager)
-- [weechat](https://weechat.org/download/) (irc client)
+- [weechat](https://weechat.org/download/) (cli irc client)
+
+
+### Mac
 - [alt+tab](https://alt-tab-macos.netlify.app/#installation) (app switcher)
+- [iina](https://iina.io/)
+- [Skitch](https://evernote.com/products/skitch)
+- [RecordIt](http://recordit.co/)
+- [Replay](https://www.replay.io/pricing)
+
+
+### Linux (Ubuntu 20.04)
+- cli: `sudo apt-get install -y dconf-editor && dconf-editor`, gui: [`open dconf Editor > org > gnome > shell > app-switcher > current-workspace-only: true`](https://askubuntu.com/a/963792)
+- cli: `sudo apt-get install gnome-tweaks`, gui: `open Tweaks > Keyboard & Mouse > Additional Layout Options > Caps Lock behavior`
+- gui: `open Settings > Keyboard Shortcuts`
+  - `Launch terminal: Disabled`
+  - `Switch applications: Alt+Tab`
+  - `Switch to workspace 1: Ctrl+F1`
+  - `Switch windows: Disabled`
+  - `Copy a screenshot of an area to clipboard: Shift+Alt+$`
+  - `Close window: Alt+Q`
+  - `Slack: Alt+-`
 
 
 ### Zsh Themes
@@ -62,11 +81,6 @@
 - [pure](https://github.com/sindresorhus/pure#install)
 - [spaceship-prompt](https://github.com/denysdovhan/spaceship-prompt#installing)
 - [colors](https://github.com/mbadolato/iTerm2-Color-Schemes) - [BlulocoLight](https://github.com/mbadolato/iTerm2-Color-Schemes/blob/master/schemes/BlulocoLight.itermcolors)
-
-
-## Mac Tools
-- [Skitch](https://evernote.com/products/skitch)
-- [RecordIt](http://recordit.co/)
 
 
 ## CLI tools by language
