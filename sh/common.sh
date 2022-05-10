@@ -17,7 +17,7 @@ fi
 function glof() {
   local branch="${1-origin/master}"
 
-  glo ${branch}~1..HEAD
+  glo ${branch}~2..HEAD
 
   return $?
 }
