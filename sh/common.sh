@@ -6,16 +6,16 @@ export_path "${HOME}/.local/bin"
 export_path "/usr/local/sbin"
 
 alias dotf="cd ${DOTF}"
-unalias gs
+alias gs="printf '\n\t¯\_(ツ)_/¯\n\n'"
 
 if is_cmd batcat; then
   alias bat=batcat
   alias cat=batcat
 fi
 
-# Git log one-line - from branch up to HEAD
+# Git log one-line - from "branch" up to HEAD
 function glof() {
-  branch="${1-origin/master}"
+  local branch="${1-origin/master}"
 
   glo ${branch}~1..HEAD
 

@@ -21,9 +21,9 @@ function src_file () {
 
 # Export a variable if cmd is true
 function export_var() {
-  var="$1"
-  val="$2"
-  cmd="$3"
+  local var="$1"
+  local val="$2"
+  local cmd="$3"
 
   "$cmd" "$val" && eval 'export "${var}=${val}"'
   return $?
@@ -39,8 +39,8 @@ function export_path () {
 
 # Create (or force) a symbolic link
 function lnsf() {
-  src="$1"
-  dst="$2"
+  local src="$1"
+  local dst="$2"
 
   if ! is_file "$src" && ! is_dir "$src"; then
     echo "Error: \"$src\" doesn't exists! There is nothing to link."
