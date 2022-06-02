@@ -11,6 +11,8 @@ alias gs="printf '\n\t¯\_(ツ)_/¯\n\n'"
 if is_cmd batcat; then
   alias bat=batcat
   alias cat=batcat
+elif is_cmd bat; then
+  alias cat=bat
 fi
 
 # Git log one-line - from "branch" up to HEAD
