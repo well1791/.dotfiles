@@ -11,4 +11,3 @@ if is_cmd pyenv; then
   eval "$(pyenv virtualenv-init - 2> /dev/null)"
 fi
 
-is_cmd owl && eval "$(owl init -)"
