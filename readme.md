@@ -14,6 +14,7 @@
   - [exa](https://github.com/ogham/exa#installation) (instead of `ls`)
   - [fasd](https://github.com/clvv/fasd#install) (all in one; `autojump`, `z`, `v`)
   - [bat](https://github.com/sharkdp/bat) (instead of `cat`)
+  - [no special characters while using alt/option](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/EventOverview/TextDefaultsBindings/TextDefaultsBindings.html)
 
 - not so important
   - [fd](https://github.com/sharkdp/fd#installation) (instead of `find`)
