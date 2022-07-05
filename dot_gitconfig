@@ -2,8 +2,8 @@
   name = Wellington Mendoza
   email = wellsaint91@gmail.com
 
-[includeIf "gitdir:~/Code/"]
-  path = ~/Code/.gitconfig
+[includeIf "gitdir:~/Code/work/"]
+  path = ~/Code/work/.gitconfig
 
 [filter "lfs"]
   clean = git-lfs clean %f
@@ -38,13 +38,17 @@
   commit-decoration-style = bold yellow box ul
   file-style = bold crimson
   file-decoration-style = bold crimson box
+; DELTA CONFIGS
 
 [init]
   defaultBranch = main
+  templatedir = ~/.git_template
 
 [credential "https://github.com"]
-  helper = 
+  helper =
   helper = !/usr/bin/gh auth git-credential
+
 [credential "https://gist.github.com"]
-  helper = 
+  helper =
   helper = !/usr/bin/gh auth git-credential
+
