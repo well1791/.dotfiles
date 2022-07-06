@@ -148,7 +148,5 @@ bindkey -M vicmd 'j' history-substring-search-down
 # --------------------------------
 
 if command -v chezmoi > /dev/null 2>&1; then
-  DOTF="$(chezmoi source-path)"
-  export DOTF
-  source "${DOTF}/init.sh"
+  source "$(chezmoi source-path)/init.sh"
 fi
