@@ -97,8 +97,27 @@
                         ]
                     },
                     {
-                        "description": "use numbers somwehere else",
+                        "description": "use number row somewhere else",
                         "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "quote",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "grave_accent_and_tilde"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
                             {
                                 "from": {
                                     "key_code": "q",
@@ -158,7 +177,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "a",
+                                    "key_code": "r",
                                     "modifiers": {
                                         "mandatory": [
                                             "right_option"
@@ -177,7 +196,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "s",
+                                    "key_code": "a",
                                     "modifiers": {
                                         "mandatory": [
                                             "right_option"
@@ -196,7 +215,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "d",
+                                    "key_code": "s",
                                     "modifiers": {
                                         "mandatory": [
                                             "right_option"
@@ -215,7 +234,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "z",
+                                    "key_code": "d",
                                     "modifiers": {
                                         "mandatory": [
                                             "right_option"
@@ -234,7 +253,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "x",
+                                    "key_code": "f",
                                     "modifiers": {
                                         "mandatory": [
                                             "right_option"
@@ -253,7 +272,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "c",
+                                    "key_code": "z",
                                     "modifiers": {
                                         "mandatory": [
                                             "right_option"
@@ -272,7 +291,7 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "f",
+                                    "key_code": "x",
                                     "modifiers": {
                                         "mandatory": [
                                             "right_option"
@@ -285,6 +304,44 @@
                                 "to": [
                                     {
                                         "key_code": "0"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "c",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "hyphen"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "v",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_option"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "equal_sign"
                                     }
                                 ],
                                 "type": "basic"
