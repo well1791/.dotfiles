@@ -2,8 +2,8 @@
 # Initialize all custom settings
 # ------------------------------
 
-source "./functions.sh"
-for f in "./sh"/*.sh; do
+source "${DOTF}/functions.sh"
+for f in "${DOTF}/sh"/*.sh; do
   source $f
 done
 
