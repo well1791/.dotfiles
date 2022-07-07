@@ -16,7 +16,50 @@
                 },
                 "rules": [
                     {
-                        "description": "use",
+                        "description": "use pipe, curly and square brackets somewhere else",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "o",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_command"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "open_bracket"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "p",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_command"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "close_bracket"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "use quote as enter",
                         "manipulators": [
                             {
                                 "from": {
@@ -572,6 +615,16 @@
             },
             "selected": true,
             "simple_modifications": [
+                {
+                    "from": {
+                        "key_code": "open_bracket"
+                    },
+                    "to": [
+                        {
+                            "key_code": "backslash"
+                        }
+                    ]
+                },
                 {
                     "from": {
                         "key_code": "quote"
