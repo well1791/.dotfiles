@@ -16,6 +16,26 @@
                 },
                 "rules": [
                     {
+                        "description": "use ctrl+h as backspace",
+                        "manipulators": [
+                            {
+                                "type": "basic",
+                                "from": {
+                                    "key_code": "h",
+                                    "modifiers": {
+                                        "mandatory": ["left_control"],
+                                        "optional": ["left_command"]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
                         "description": "use ctrl+[pnbf] for up/down/backward/foward",
                         "manipulators": [
                             {
