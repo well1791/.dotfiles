@@ -16,6 +16,30 @@
                 },
                 "rules": [
                     {
+                        "description": "use",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "return_or_enter",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_command"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "quote"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
                         "description": "use ctrl+h as backspace",
                         "manipulators": [
                             {
@@ -550,21 +574,11 @@
             "simple_modifications": [
                 {
                     "from": {
-                        "key_code": "right_shift"
+                        "key_code": "quote"
                     },
                     "to": [
                         {
                             "key_code": "return_or_enter"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "return_or_enter"
-                    },
-                    "to": [
-                        {
-                            "key_code": "escape"
                         }
                     ]
                 }
