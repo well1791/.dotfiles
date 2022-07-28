@@ -492,11 +492,11 @@
                         ]
                     },
                     {
-                        "description": "Use left_shift as escape and right_shift as enter",
+                        "description": "Use caps_lock as escape and right_shift as enter",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "left_shift",
+                                    "key_code": "caps_lock",
                                     "modifiers": {
                                         "optional": [
                                             "any"
@@ -1142,31 +1142,11 @@
             "simple_modifications": [
                 {
                     "from": {
-                        "key_code": "caps_lock"
-                    },
-                    "to": [
-                        {
-                            "key_code": "tab"
-                        }
-                    ]
-                },
-                {
-                    "from": {
                         "key_code": "open_bracket"
                     },
                     "to": [
                         {
                             "key_code": "backslash"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "tab"
-                    },
-                    "to": [
-                        {
-                            "key_code": "grave_accent_and_tilde"
                         }
                     ]
                 }
