@@ -506,13 +506,13 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_control",
+                                        "key_code": "left_shift",
                                         "lazy": true
                                     }
                                 ],
                                 "to_if_alone": [
                                     {
-                                        "key_code": "grave_accent_and_tilde"
+                                        "key_code": "escape"
                                     }
                                 ],
                                 "type": "basic"
@@ -528,13 +528,8 @@
                                 },
                                 "to": [
                                     {
-                                        "key_code": "left_shift",
+                                        "key_code": "left_control",
                                         "lazy": true
-                                    }
-                                ],
-                                "to_if_alone": [
-                                    {
-                                        "key_code": "escape"
                                     }
                                 ],
                                 "type": "basic"
@@ -1266,26 +1261,6 @@
                     "to": [
                         {
                             "key_code": "backslash"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "caps_lock"
-                    },
-                    "to": [
-                        {
-                            "key_code": "left_shift"
-                        }
-                    ]
-                },
-                {
-                    "from": {
-                        "key_code": "left_shift"
-                    },
-                    "to": [
-                        {
-                            "key_code": "caps_lock"
                         }
                     ]
                 }
