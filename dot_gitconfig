@@ -1,3 +1,5 @@
+;reference: https://github.com/voku/dotfiles/blob/master/.gitconfig
+
 [user]
   name = Wellington Mendoza
   email = wellsaint91@gmail.com
@@ -14,15 +16,27 @@
   ui = true
 
 [diff]
+  compactionHeuristic = true
+  renamelimit = 9999
+  tool = vimdif
+  renames = copies
+  algorithm = patience
+  wsErrorHighlight = all
   identHeuristic = on
   colorMoved = default
   ;; Delta has to look at the raw colors it receives in a line from Git
   ;; if it causes problems, the behavior can be disabled using
   ; inspect-raw-lines = false
 
-; DELTA CONFIGS
 [core]
   pager = delta
+  trustctime = false
+  editor = vim
+  precomposeunicode = false
+  untrackedCache = true
+  excludesfile = ~/.gitignore_global
+  attributesfile = ~/.gitattributes
+  fscache = true
 
 [interactive]
   diffFilter = delta --color-only --features=interactive
@@ -44,3 +58,34 @@
   defaultBranch = main
   templatedir = ~/.git_template
 
+[push]
+  default = simple
+  followTags = true
+
+[pull]
+  default = current
+	rebase = true
+  ff = only
+
+[fetch]
+  prune = true
+
+[merge]
+  stat = true
+  ff = false
+
+[grep]
+  lineNumber = true
+
+[apply]
+  whitespace = warn
+
+[rebase]
+  autosquash = true
+
+[credential]
+  # cache the password for http-auth
+  helper = cache
+
+[log]
+  decorate = short
