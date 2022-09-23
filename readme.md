@@ -12,7 +12,7 @@
 - important!
   - [rg](https://github.com/BurntSushi/ripgrep#installation) (instead of `ag`/`grep`/etc...)
   - [exa](https://github.com/ogham/exa#installation) (instead of `ls`)
-  - [fasd](https://github.com/clvv/fasd#install) (all in one; `autojump`, `z`, `v`)
+  - [z](https://github.com/ajeetdsouza/zoxide#step-1-install-zoxide) (all in one; `autojump`, `z`, `v`)
   - [bat](https://github.com/sharkdp/bat) (instead of `cat`)
   - [no special characters while using alt/option](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/EventOverview/TextDefaultsBindings/TextDefaultsBindings.html)
 
