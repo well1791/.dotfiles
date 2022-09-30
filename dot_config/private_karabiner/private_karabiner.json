@@ -17,50 +17,7 @@
                 },
                 "rules": [
                     {
-                        "description": "use brackets somewhere else",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "o",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_command"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "open_bracket"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "p",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "right_command"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "close_bracket"
-                                    }
-                                ],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "use left_control for some emacs motions",
+                        "description": "use left_control + bnpf for emacs directions and h for backspace",
                         "manipulators": [
                             {
                                 "from": {
@@ -160,9 +117,10 @@
                         ]
                     },
                     {
-                        "description": "use left_alt for some vim motion",
+                        "description": "use left_option + hjkl for vim direction",
                         "manipulators": [
                             {
+                                "description": "left_option + h = left",
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
@@ -182,6 +140,7 @@
                                 "type": "basic"
                             },
                             {
+                                "description": "left_option + j = down",
                                 "from": {
                                     "key_code": "j",
                                     "modifiers": {
@@ -201,6 +160,7 @@
                                 "type": "basic"
                             },
                             {
+                                "description": "left_option + k = up",
                                 "from": {
                                     "key_code": "k",
                                     "modifiers": {
@@ -220,6 +180,7 @@
                                 "type": "basic"
                             },
                             {
+                                "description": "left_option + l = right",
                                 "from": {
                                     "key_code": "l",
                                     "modifiers": {
@@ -241,33 +202,46 @@
                         ]
                     },
                     {
-                        "description": "use number row somewhere else",
+                        "description": "use spacebar_mod layout",
                         "manipulators": [
                             {
+                                "description": "spacebar modifier",
+                                "type": "basic",
                                 "from": {
-                                    "key_code": "quote",
+                                    "key_code": "spacebar",
                                     "modifiers": {
-                                        "mandatory": [
-                                            "right_command"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
+                                        "mandatory": [],
+                                        "optional": ["any"]
                                     }
                                 },
                                 "to": [
                                     {
-                                        "key_code": "grave_accent_and_tilde"
+                                        "set_variable": {
+                                            "name": "spacebar_mod",
+                                            "value": 1
+                                        }
                                     }
                                 ],
-                                "type": "basic"
+                                "to_after_key_up": [
+                                    {
+                                        "set_variable": {
+                                            "name": "spacebar_mod",
+                                            "value": 0
+                                        }
+                                    }
+                                ],
+                                "to_if_alone": [
+                                    {
+                                        "key_code": "spacebar"
+                                    }
+                                ]
                             },
                             {
+                                "description": "spacebar_mod + q = 1",
                                 "from": {
                                     "key_code": "q",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command"
                                         ],
                                         "optional": [
                                             "any"
@@ -279,14 +253,21 @@
                                         "key_code": "1"
                                     }
                                 ],
-                                "type": "basic"
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "spacebar_mod",
+                                        "value": 1
+                                    }
+                                ]
                             },
                             {
+                                "description": "spacebar_mod + w = 2",
                                 "from": {
                                     "key_code": "w",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command"
                                         ],
                                         "optional": [
                                             "any"
@@ -298,14 +279,21 @@
                                         "key_code": "2"
                                     }
                                 ],
-                                "type": "basic"
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "spacebar_mod",
+                                        "value": 1
+                                    }
+                                ]
                             },
                             {
+                                "description": "spacebar_mod + e = 3",
                                 "from": {
                                     "key_code": "e",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command"
                                         ],
                                         "optional": [
                                             "any"
@@ -317,14 +305,21 @@
                                         "key_code": "3"
                                     }
                                 ],
-                                "type": "basic"
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "spacebar_mod",
+                                        "value": 1
+                                    }
+                                ]
                             },
                             {
+                                "description": "spacebar_mod + r = 4",
                                 "from": {
                                     "key_code": "r",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command"
                                         ],
                                         "optional": [
                                             "any"
@@ -336,14 +331,21 @@
                                         "key_code": "4"
                                     }
                                 ],
-                                "type": "basic"
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "spacebar_mod",
+                                        "value": 1
+                                    }
+                                ]
                             },
                             {
+                                "description": "spacebar_mod + t = 5",
                                 "from": {
-                                    "key_code": "a",
+                                    "key_code": "t",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command"
                                         ],
                                         "optional": [
                                             "any"
@@ -355,14 +357,21 @@
                                         "key_code": "5"
                                     }
                                 ],
-                                "type": "basic"
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "spacebar_mod",
+                                        "value": 1
+                                    }
+                                ]
                             },
                             {
+                                "description": "spacebar_mod + y = 6",
                                 "from": {
-                                    "key_code": "s",
+                                    "key_code": "y",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command"
                                         ],
                                         "optional": [
                                             "any"
@@ -374,14 +383,21 @@
                                         "key_code": "6"
                                     }
                                 ],
-                                "type": "basic"
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "spacebar_mod",
+                                        "value": 1
+                                    }
+                                ]
                             },
                             {
+                                "description": "spacebar_mod + u = 7",
                                 "from": {
-                                    "key_code": "d",
+                                    "key_code": "u",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command"
                                         ],
                                         "optional": [
                                             "any"
@@ -393,14 +409,21 @@
                                         "key_code": "7"
                                     }
                                 ],
-                                "type": "basic"
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "spacebar_mod",
+                                        "value": 1
+                                    }
+                                ]
                             },
                             {
+                                "description": "spacebar_mod + i = 8",
                                 "from": {
-                                    "key_code": "f",
+                                    "key_code": "i",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command"
                                         ],
                                         "optional": [
                                             "any"
@@ -412,14 +435,21 @@
                                         "key_code": "8"
                                     }
                                 ],
-                                "type": "basic"
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "spacebar_mod",
+                                        "value": 1
+                                    }
+                                ]
                             },
                             {
+                                "description": "spacebar_mod + o = 9",
                                 "from": {
-                                    "key_code": "z",
+                                    "key_code": "o",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command"
                                         ],
                                         "optional": [
                                             "any"
@@ -431,14 +461,21 @@
                                         "key_code": "9"
                                     }
                                 ],
-                                "type": "basic"
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "spacebar_mod",
+                                        "value": 1
+                                    }
+                                ]
                             },
                             {
+                                "description": "spacebar_mod + p = 0",
                                 "from": {
-                                    "key_code": "x",
+                                    "key_code": "p",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command"
                                         ],
                                         "optional": [
                                             "any"
@@ -450,14 +487,21 @@
                                         "key_code": "0"
                                     }
                                 ],
-                                "type": "basic"
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "spacebar_mod",
+                                        "value": 1
+                                    }
+                                ]
                             },
                             {
+                                "description": "spacebar + j = -",
                                 "from": {
-                                    "key_code": "c",
+                                    "key_code": "j",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command"
                                         ],
                                         "optional": [
                                             "any"
@@ -469,14 +513,72 @@
                                         "key_code": "hyphen"
                                     }
                                 ],
-                                "type": "basic"
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "spacebar_mod",
+                                        "value": 1
+                                    }
+                                ]
                             },
                             {
+                                "description": "spacebar + k = [",
                                 "from": {
-                                    "key_code": "v",
+                                    "key_code": "k",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "open_bracket"
+                                    }
+                                ],
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "spacebar_mod",
+                                        "value": 1
+                                    }
+                                ]
+                            },
+                            {
+                                "description": "spacebar + l = ]",
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": [],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "close_bracket"
+                                    }
+                                ],
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "spacebar_mod",
+                                        "value": 1
+                                    }
+                                ]
+                            },
+                            {
+                                "description": "spacebar + m = =",
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": {
+                                        "mandatory": [
                                         ],
                                         "optional": [
                                             "any"
@@ -488,12 +590,19 @@
                                         "key_code": "equal_sign"
                                     }
                                 ],
-                                "type": "basic"
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "variable_if",
+                                        "name": "spacebar_mod",
+                                        "value": 1
+                                    }
+                                ]
                             }
                         ]
                     },
                     {
-                        "description": "Use caps_lock as escape, right_shift as enter, tab as left_option",
+                        "description": "Use caps_lock as escape and left_control, right_shift as enter, tab as left_option",
                         "manipulators": [
                             {
                                 "from": {
@@ -581,7 +690,164 @@
                         ]
                     },
                     {
-                        "description": "use fn for f1-f12 and some media",
+                        "description": "right_command for some media",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "o",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_command"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "display_brightness_decrement"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "p",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_command"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "display_brightness_increment"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "l",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_command"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "rewind"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "semicolon",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_command"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "play_or_pause"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "quote",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_command"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "fast_forward"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "comma",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_command"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "mute"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "period",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_command"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "volume_decrement"
+                                    }
+                                ],
+                                "type": "basic"
+                            },
+                            {
+                                "from": {
+                                    "key_code": "slash",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "right_command"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "volume_increment"
+                                    }
+                                ],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "use fn for f1-f12",
                         "manipulators": [
                             {
                                 "from": {
@@ -807,158 +1073,6 @@
                                 "to": [
                                     {
                                         "key_code": "f12"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "i",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "fn"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "display_brightness_decrement"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "o",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "fn"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "display_brightness_increment"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "j",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "fn"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "rewind"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "k",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "fn"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "play_or_pause"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "l",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "fn"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "fast_forward"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "m",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "fn"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "mute"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "comma",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "fn"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "volume_decrement"
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
-                                    "key_code": "period",
-                                    "modifiers": {
-                                        "mandatory": [
-                                            "fn"
-                                        ],
-                                        "optional": [
-                                            "any"
-                                        ]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "volume_increment"
                                     }
                                 ],
                                 "type": "basic"
